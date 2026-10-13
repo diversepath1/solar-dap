@@ -1,0 +1,4 @@
+location,observations,RF_MAE,RF_RMSE,RF_R2,Persistence_MAE,Persistence_RMSE,Persistence_R2
+Delhi,6986,12.749,27.824,0.984,50.766,84.276,0.854
+Jaisalmer,6990,7.932,18.958,0.995,60.12,98.13,0.864
+Raipur,6986,11.106,27.24,0.989,58.137,94.539,0.863

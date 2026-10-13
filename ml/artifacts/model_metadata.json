@@ -1,0 +1,42 @@
+{
+  "project": "SOLAR DAP",
+  "model_type": "RandomForestRegressor",
+  "target": "ghi",
+  "forecast_horizon_minutes": 60,
+  "sampling_interval_minutes": 15,
+  "features": [
+    "air_temp",
+    "cloud_opacity",
+    "relative_humidity",
+    "wind_speed_10m",
+    "ghi_now",
+    "ghi_15min_ago",
+    "ghi_1hr_ago",
+    "target_hour_sin",
+    "target_hour_cos",
+    "target_year_sin",
+    "target_year_cos",
+    "location_Delhi",
+    "location_Jaisalmer",
+    "location_Raipur"
+  ],
+  "training_rows": 83846,
+  "test_rows": 20962,
+  "test_start": "2025-10-19 06:15:00+05:30",
+  "test_end": "2025-12-31 01:30:00+05:30",
+  "test_split_method": "Chronological by target timestamp",
+  "n_estimators": 100,
+  "min_samples_leaf": 3,
+  "random_state": 42,
+  "anomaly_method": "City-specific 99th percentile of absolute residuals",
+  "anomaly_thresholds_w_m2": {
+    "Delhi": 120.72036910173175,
+    "Jaisalmer": 81.45672815295814,
+    "Raipur": 136.32225725108168
+  },
+  "limitations": [
+    "Metrics are from a single chronological holdout period.",
+    "Anomaly thresholds were explored on test residuals and require separate calibration before deployment.",
+    "The inference pipeline must reproduce the saved feature engineering and encoding."
+  ]
+}
